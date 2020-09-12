@@ -13,11 +13,6 @@
 
 	<web>
 		<link target="/">
-			<dir name="/home/rhushi/dev/prog/microprofile-config-example/target/m2e-wtp/web-resources">
-				<exclude name="/"/>
-			</dir>
-		</link>
-		<link target="/">
 			<dir name="/home/rhushi/dev/prog/microprofile-config-example/src/main/webapp">
 			</dir>
 		</link>

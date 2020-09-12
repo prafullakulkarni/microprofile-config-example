@@ -2,7 +2,7 @@
     <wb-module deploy-name="microprofile-config-example-1.0-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="context-root" value="microprofile-config-example"/>
         <property name="java-output-path" value="/microprofile-config-example/target/classes"/>
     </wb-module>
