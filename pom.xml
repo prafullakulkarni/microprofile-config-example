@@ -25,15 +25,78 @@
 			<version>${version.javaee}</version>
 			<scope>provided</scope>
 		</dependency>
-		 <dependency>
-        <groupId>org.eclipse.microprofile</groupId>
-        <artifactId>microprofile</artifactId>
-        <version>3.3</version>
-        <type>pom</type>
-        <scope>provided</scope>
-    </dependency>
-	</dependencies>
+		<dependency>
+			<groupId>org.eclipse.microprofile</groupId>
+			<artifactId>microprofile</artifactId>
+			<version>3.3</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>3.0.0-M1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.jpa.modelgen.processor -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+			<version>3.0.0-M1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.jpars -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.jpars</artifactId>
+			<version>3.0.0-M1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+			<version>3.0.0-M1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.weaving -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.weaving</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.16</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.6</version>
+		</dependency>
 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+
+
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
