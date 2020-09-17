@@ -22,30 +22,29 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @Path("/hello")
 public class HelloResource {
 
-	@PersistenceContext(unitName="default")
-	private EntityManager entityManager;
-	
-    @Inject
-    @ConfigProperty(name="username", defaultValue="admin")
-    private String username;
+	@Inject
+	private MemberDAO memberDAO;
 
-    @Inject
-    Config config;
-    
-    @Inject
-    Greeting greeting;
+	@Inject
+	@ConfigProperty(name = "username", defaultValue = "admin")
+	private String username;
 
-    @GET
-    public Response hello() {
-        Map<String, Object> configProperties = new HashMap<>();
+	@Inject
+	Config config;
 
-        
-        configProperties.put("username", username);
-        // configProperties.put("password", config.getValue("password", String.class));
-        configProperties.put("microprofile-apis", config.getValue("microprofile.apis", String[].class));
-        Member member = this.entityManager.find(Member.class,1L);
-        return Response.ok(member).build();
-        
-        // return Response.ok(configProperties).build();
-    }
+	@Inject
+	Greeting greeting;
+
+	@GET
+	public Response hello() {
+		Map<String, Object> configProperties = new HashMap<>();
+
+		configProperties.put("username", username);
+		// configProperties.put("password", config.getValue("password", String.class));
+		configProperties.put("microprofile-apis", config.getValue("microprofile.apis", String[].class));
+		Member member = this.memberDAO.getMember(1L);
+		return Response.ok(member).build();
+
+		// return Response.ok(configProperties).build();
+	}
 }
