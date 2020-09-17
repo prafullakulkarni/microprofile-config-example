@@ -37,8 +37,9 @@ public class MemberRS {
 
 	@PUT
 	@Path("/{id}")
-	public Response put(@FormParam("lastName") String lastName, @FormParam("firstName") String firstName,
-			@PathParam("id") Long id) {
+	public Response put(@FormParam("lastName") String lastName, 
+			            @FormParam("firstName") String firstName,
+			            @PathParam("id") Long id) {
 		this.memberDAO.updateMember(lastName, firstName, id);
 		return Response.ok().entity("{}").build();
 	}
