@@ -1,24 +1,28 @@
 package com.kodnito.mpconfig;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 
 @Entity
 @Table(name="member")
-@SequenceGenerator(name="member_seq",initialValue=1,allocationSize=50)
+@SequenceGenerator(name="member_seq")
 @Getter
 @Setter
 public class Member implements Comparable<Member> {
@@ -28,16 +32,18 @@ public class Member implements Comparable<Member> {
 	@Column(name="ID")
 	private Long id;
 	
-	@NotNull
-    @Column(name = "LAST_NAME")
+    @Column(name = "LAST_NAME",nullable=false)
 	@JsonProperty
     private String lastName;
 	
 	
-    @NotNull
-    @Column(name = "FIRST_NAME")
+    @Column(name = "FIRST_NAME",nullable=false)
     @JsonProperty
     private String firstName;
+    
+    @JoinColumn(name = "MEMBER_ID")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
+    private Set<Status> status; // + getter / setters
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
