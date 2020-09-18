@@ -16,16 +16,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 @Entity
 @Table(name="member")
 @SequenceGenerator(name="member_seq")
-@Getter
-@Setter
-public class Member implements Comparable<Member> {
+public class Member  {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="member_seq")
@@ -45,7 +40,7 @@ public class Member implements Comparable<Member> {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
     private Set<Status> status; // + getter / setters
     
-    @ManyToMany(mappedBy="members",cascade = CascadeType.PERSIST)
+    @ManyToMany(mappedBy="members",cascade = CascadeType.ALL)
     private Set<Role> roles;
     
     
@@ -55,10 +50,101 @@ public class Member implements Comparable<Member> {
 
 	}
 
+
+
 	@Override
-	public int compareTo(Member other) {
-		// TODO Auto-generated method stub
-		return other.compareTo(other);
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		return result;
 	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Member other = (Member) obj;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		return true;
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+
+	public Set<Status> getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(Set<Status> status) {
+		this.status = status;
+	}
+
+
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	
 
 }
