@@ -1,4 +1,4 @@
-package com.kodnito.mpconfig;
+package com.rhushi.rest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +11,10 @@ import javax.ws.rs.core.Response;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+
+import com.rhushi.dao.MemberDAO;
+import com.rhushi.model.Member;
+import com.rhushi.services.Greeting;
 
 // Run the payara micro server using the command mvn package payara-micro:start
 

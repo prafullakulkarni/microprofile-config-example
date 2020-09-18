@@ -1,10 +1,12 @@
-package com.kodnito.mpconfig;
+package com.rhushi.dao;
 
 import java.util.List;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+
+import com.rhushi.model.Member;
 
 @Singleton
 public class MemberDAO {

@@ -1,4 +1,4 @@
-package com.kodnito.mpconfig;
+package com.rhushi.app;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

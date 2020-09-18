@@ -1,4 +1,4 @@
-package com.kodnito.mpconfig;
+package com.rhushi.db;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,6 +6,10 @@ import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import com.rhushi.model.Member;
+import com.rhushi.model.Role;
+import com.rhushi.model.Status;
 
 public class DBClient {
 
@@ -30,12 +34,27 @@ public class DBClient {
 			
 			member.setStatus(status);
 			
+			Role adminRole = new Role();
+			adminRole.setRoleName("Admin");
+			
+			Role consultantRole = new Role();
+			consultantRole.setRoleName("Consultant");
+			
+			
+			
+			Set<Role> roles = new HashSet<>();
+			roles.add(consultantRole);
+			roles.add(adminRole);
+			
+			member.setRoles(roles);
+			
+			
 			eman.persist(member);
 			
 			eman.getTransaction().commit();
 
 		} catch (Exception e) {
-			eman.getTransaction().rollback();
+			//eman.getTransaction().rollback();
 			System.out.println(e.getMessage());
 			// TODO Auto-generated catch block
 			e.printStackTrace();

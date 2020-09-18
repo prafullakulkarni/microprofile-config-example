@@ -1,4 +1,4 @@
-package com.kodnito.mpconfig;
+package com.rhushi.model;
 
 import java.util.Set;
 
@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -43,6 +44,11 @@ public class Member implements Comparable<Member> {
     @JoinColumn(name = "MEMBER_ID")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
     private Set<Status> status; // + getter / setters
+    
+    @ManyToMany(mappedBy="members",cascade = CascadeType.PERSIST)
+    private Set<Role> roles;
+    
+    
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

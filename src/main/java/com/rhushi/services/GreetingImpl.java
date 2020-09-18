@@ -1,4 +1,4 @@
-package com.kodnito.mpconfig;
+package com.rhushi.services;
 
 import javax.enterprise.context.RequestScoped;
 

@@ -1,4 +1,4 @@
-package com.kodnito.mpconfig;
+package com.rhushi.services;
 
 public interface Greeting {
 	public String sayHello();
