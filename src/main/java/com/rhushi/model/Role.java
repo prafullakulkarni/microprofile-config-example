@@ -17,11 +17,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "role")
-@SequenceGenerator(name = "role_seq")
+@SequenceGenerator(name = "public.role_seq")
 public class Role   {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "public.role_seq")
 	@Column(name = "ID")
 	private Long id;
 

@@ -22,7 +22,7 @@
 				value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="123" />
 			<property name="eclipselink.ddl-generation"
-				value="drop-and-create-tables" />
+				value="create-or-extend-tables" />
 			<property name="eclipselink.create-ddl-jdbc-file-name"
 				value="createDDL_ddlGeneration.sql" />
 			<property name="eclipselink.drop-ddl-jdbc-file-name"

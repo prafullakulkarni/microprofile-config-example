@@ -19,11 +19,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="member")
-@SequenceGenerator(name="member_seq")
+@SequenceGenerator(name="public.member_seq")
 public class Member  {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="member_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="public.member_seq")
 	@Column(name="ID")
 	private Long id;
 	
