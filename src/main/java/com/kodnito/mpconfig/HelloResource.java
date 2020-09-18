@@ -1,14 +1,10 @@
 package com.kodnito.mpconfig;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
