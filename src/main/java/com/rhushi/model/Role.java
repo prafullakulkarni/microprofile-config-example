@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-@Table(name = "role")
+@Table(name = "role",schema = "app")
 @SequenceGenerator(name = "public.role_seq")
 public class Role   {
 

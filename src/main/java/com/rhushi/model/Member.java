@@ -18,12 +18,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
-@Table(name="member")
-@SequenceGenerator(name="public.member_seq")
+@Table(name="member",schema = "app")
+@SequenceGenerator(name="member_seq")
 public class Member  {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="public.member_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="member_seq")
 	@Column(name="ID")
 	private Long id;
 	

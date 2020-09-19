@@ -9,11 +9,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="status")
-@SequenceGenerator(name = "public.status_seq")
+@Table(name="status",schema = "app")
+@SequenceGenerator(name = "status_seq")
 public class Status  {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="public.status_seq")	
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="status_seq")	
     @Column(name = "ID")
     private Long id;
 	
