@@ -20,14 +20,13 @@ public class TestBatchlet implements Batchlet {
 
     @Override
     public String process() throws Exception {
-//        String filename = "/home/rhushi/out.txt";//jobCtx.getProperties().getProperty("outfile");
-//        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-//
-//        BufferedWriter output = new BufferedWriter(new FileWriter(filename, true));
-//        output.append(timestamp);
-//        output.newLine();
-//        output.close();
+        String filename = "/home/rhushi/out.txt";//jobCtx.getProperties().getProperty("outfile");
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 
+        BufferedWriter output = new BufferedWriter(new FileWriter(filename, true));
+        output.append(timestamp);
+        output.newLine();
+        output.close();
         return "COMPLETED";
     }
 

@@ -104,8 +104,16 @@
 			<version>1.0.1</version>
 		</dependency>
 
-
-
+		 <dependency>
+            <groupId>com.ibm.jbatch</groupId>
+            <artifactId>com.ibm.jbatch.spi</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.jbatch</groupId>
+            <artifactId>com.ibm.jbatch.container</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>
