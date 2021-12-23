@@ -13,5 +13,14 @@ Flyway migration command (here the schema is app !!!)
 
 mvn clean flyway:migrate -Dflyway.user=postgres -Dflyway.password=123 -Dflyway.schemas=app -Dflyway.url=jdbc:postgresql://localhost:5432/postgres
 
+# docker commands 
 
-Token : 425eebf277fab8e5fce4faef111210da85427497
+docker build -t microprofile-config-example:latest .
+
+docker run --name payara -it -p 8080:8080 -p 4848:4848  --rm microprofile-config-example:latest
+
+docker stop payara
+
+docker exec -it payara /bin/bash
+
+docker cp payara:/opt/payara/appserver/glassfish/domains/production/config/domain.xml .   
