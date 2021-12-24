@@ -43,6 +43,7 @@ public class HelloResource {
 		// configProperties.put("password", config.getValue("password", String.class));
 		configProperties.put("microprofile-apis", config.getValue("microprofile.apis", String[].class));
 		Member member = this.memberDAO.getMember(1L);
+		member.setFirstName(member.getFirstName() + "-- config property --" + this.username);
 		return Response.ok(member).build();
 
 		// return Response.ok(configProperties).build();
