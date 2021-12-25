@@ -48,16 +48,14 @@
     <managed-thread-factory object-type="system-all" jndi-name="concurrent/__defaultManagedThreadFactory"></managed-thread-factory>
     <jdbc-connection-pool driver-classname="org.postgresql.Driver" name="Postgres" res-type="java.sql.Driver">
       <property name="password" value="123"></property>
-      <property name="user" value="postgres"></property>
+      <property name="user" value="rhushi"></property>
       <property name="URL" value="jdbc:postgresql://host.docker.internal:5432/postgres"></property>
     </jdbc-connection-pool>
     <jdbc-resource pool-name="Postgres" jndi-name="jdbc/postgres"></jdbc-resource>
   </resources>
   <servers>
     <server config-ref="server-config" name="server">
-      <system-property name="username" value="rhushikesh123"></system-property>
       <application-ref ref="__admingui" virtual-servers="__asadmin"></application-ref>
-      <application-ref ref="microprofile-config-example-1.0-SNAPSHOT" virtual-servers="server"></application-ref>
       <resource-ref ref="jdbc/__TimerPool"></resource-ref>
       <resource-ref ref="jdbc/__default"></resource-ref>
       <resource-ref ref="concurrent/__defaultManagedExecutorService"></resource-ref>
@@ -563,20 +561,5 @@
   <deployment-groups></deployment-groups>
   <clusters></clusters>
   <applications>
-    <application deployment-time="8573" context-root="/microprofile-config-example-1.0-SNAPSHOT" object-type="user" name="microprofile-config-example-1.0-SNAPSHOT" location="${com.sun.aas.instanceRootURI}/applications/microprofile-config-example-1.0-SNAPSHOT/" time-deployed="1640340008461">
-      <property name="archiveType" value="war"></property>
-      <property name="cdiDevModeEnabled" value="false"></property>
-      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/microprofile-config-example-1.0-SNAPSHOT/microprofile-config-example-1.0-SNAPSHOT.war"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="107501322363011072"></property>
-      <property name="org.glassfish.persistence.app_name_property" value="microprofile-config-example-1.0-SNAPSHOT"></property>
-      <property name="defaultAppName" value="microprofile-config-example-1.0-SNAPSHOT"></property>
-      <module name="microprofile-config-example-1.0-SNAPSHOT">
-        <engine sniffer="cdi"></engine>
-        <engine sniffer="ejb"></engine>
-        <engine sniffer="security"></engine>
-        <engine sniffer="jpa"></engine>
-        <engine sniffer="web"></engine>
-      </module>
-    </application>
   </applications>
 </domain>
