@@ -1,0 +1,4 @@
+create-jdbc-connection-pool --driverclassname org.postgresql.Driver --restype java.sql.Driver Postgres
+set resources.jdbc-connection-pool.Postgres.property.password=${ENV=password} resources.jdbc-connection-pool.Postgres.property.URL=jdbc:postgresql://host.docker.internal:5432/postgres resources.jdbc-connection-pool.Postgres.property.user=${ENV=user}
+
+create-jdbc-resource --connectionpoolid Postgres jdbc/postgres
