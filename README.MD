@@ -22,6 +22,9 @@ docker build -t microprofile-config-example:latest .
 docker run --name payara -it -p 8080:8080 -p 4848:4848  --rm microprofile-config-example:latest
 
 hit the url 
+http://localhost:4848 (admin/admin)
+
+hit the url 
 
 http://localhost:8080/microprofile-config-example-1.0-SNAPSHOT/api/hello
 
