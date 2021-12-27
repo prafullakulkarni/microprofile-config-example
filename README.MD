@@ -34,7 +34,7 @@ docker stop payara
 
 docker exec -it payara /bin/bash
 
-docker cp payara:/opt/payara/appserver/glassfish/domains/production/config/domain.xml .
+#docker cp payara:/opt/payara/appserver/glassfish/domains/production/config/domain.xml .
 
 kubectl create secret generic database-config --from-literal=database-server=10.0.1.15 --from-literal=user=rhushi --from-literal=password=123
 
